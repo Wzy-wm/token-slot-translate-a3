@@ -1,0 +1,980 @@
+{
+  "tested_commit": "acd989c28bc8ea2c2ba481e280b494baace85413",
+  "environment": {
+    "python": "3.10.12",
+    "platform": "Linux-5.10.0-216.0.0.115.oe2203sp4.aarch64-aarch64-with-glibc2.35",
+    "torch": "2.7.1+cpu",
+    "torch_npu": "2.7.1.post8",
+    "triton": "3.2.0",
+    "triton_ascend_distribution": "3.2.2",
+    "device": "Ascend910_9382"
+  },
+  "cases": [
+    {
+      "id": "slot_literal",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "2b9657c77f04cb3cfe3dea35b1506e63f3a7049441fcb30cbf6cbc7c3a083b49",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        2,
+        8
+      ],
+      "input_shapes": [
+        [
+          8
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "attributes": {
+        "block_size": 4
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_single",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "bbb64c963641bc4ff3245233ac3292716a5aa1d3537cee2d1cecd5af969b750a",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        3
+      ],
+      "input_shapes": [
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "attributes": {
+        "block_size": 4
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_empty",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "643d5437104296e21d906ecb15b2c96ad278f20cfc4af53b12bb6069bd853726",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        2,
+        0
+      ],
+      "input_shapes": [
+        [
+          0
+        ],
+        [
+          2,
+          31
+        ]
+      ],
+      "attributes": {
+        "block_size": 128
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_one_size",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "202e9325b929abb506d4b0c50f989406cf61e6b3e629ed722aff7a5a439cb692",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        3,
+        33
+      ],
+      "input_shapes": [
+        [
+          33
+        ],
+        [
+          3,
+          17
+        ]
+      ],
+      "attributes": {
+        "block_size": 1
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_nonpower",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "a6b2ad0e2a1938798a5a1b5cec361185aec44541779cb6484c07f94ad0dc5c2f",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        3,
+        257
+      ],
+      "input_shapes": [
+        [
+          257
+        ],
+        [
+          3,
+          129
+        ]
+      ],
+      "attributes": {
+        "block_size": 17
+      },
+      "storage_offsets": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": "slot_all_padding",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "01b95715b5abcfcd4dc893786bad9d10770e21a907533b11dc9a1b53836c097c",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        2,
+        2
+      ],
+      "input_shapes": [
+        [
+          2
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "attributes": {
+        "block_size": 128
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_max_i32",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "3ea342e7e57a79bbe14abcee3a786d3a6b4c1fe95059e16288f414e69ff14494",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        1,
+        3
+      ],
+      "input_shapes": [
+        [
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "attributes": {
+        "block_size": 1
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_boundary257",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "c04e1809cbaccd590e1c5dd1b986e5c6fdc45258e0596488393a66c8cd722a41",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        1,
+        257
+      ],
+      "input_shapes": [
+        [
+          257
+        ],
+        [
+          1,
+          257
+        ]
+      ],
+      "attributes": {
+        "block_size": 128
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_perf_small",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "5039d93553ad304b00689abb2d1f2af5cefa929e2201a87e102f68e9fa163174",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        512
+      ],
+      "input_shapes": [
+        [
+          512
+        ],
+        [
+          8,
+          4096
+        ]
+      ],
+      "attributes": {
+        "block_size": 128
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_perf_large",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "3d210025018f227a9f845bfd8798f62357e8fec0460fbeb3333db0de0e84995b",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        32,
+        65536
+      ],
+      "input_shapes": [
+        [
+          65536
+        ],
+        [
+          32,
+          4096
+        ]
+      ],
+      "attributes": {
+        "block_size": 128
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_route_below",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "96bc20c8f9513b7b3d921f488b197215fa0be0f7026b847c21b5db215d0a5dc9",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        4095
+      ],
+      "input_shapes": [
+        [
+          4095
+        ],
+        [
+          8,
+          509
+        ]
+      ],
+      "attributes": {
+        "block_size": 64
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_route_at_pow2",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "6e7fd2fab27d7ebf3d2f798ca80fe6aed08bd448b06bfa54daf9850b09ad766f",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        4096
+      ],
+      "input_shapes": [
+        [
+          4096
+        ],
+        [
+          8,
+          509
+        ]
+      ],
+      "attributes": {
+        "block_size": 64
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_route_at_nonpower",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "e09aaa9b08ab7f43384c79bc160378eb97d88abd2133b18b249e535b788838ea",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        4096
+      ],
+      "input_shapes": [
+        [
+          4096
+        ],
+        [
+          8,
+          509
+        ]
+      ],
+      "attributes": {
+        "block_size": 96
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_wide_page_divmod",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "411ad70755dc1407921df2690acc5b6788e4c6fd33ac2a0b8420ebdd3a3759a3",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8
+      ],
+      "input_shapes": [
+        [
+          8
+        ],
+        [
+          3
+        ]
+      ],
+      "attributes": {
+        "block_size": 1073741823
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    }
+  ],
+  "negative": [
+    {
+      "id": "input_count",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "unknown_attribute",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "cpu_input",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "dtype",
+      "status": "PASS",
+      "exception": "TypeError"
+    },
+    {
+      "id": "noncontiguous",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "negative_mapping",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "logical_address_out_of_range",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "zero_block_size",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "bool_block_size",
+      "status": "PASS",
+      "exception": "ValueError"
+    },
+    {
+      "id": "output_int32_overflow",
+      "status": "PASS",
+      "exception": "ValueError"
+    }
+  ],
+  "dynamic_updates": {
+    "slot_perf_small": [
+      {
+        "id": "logical_values_changed",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0
+      },
+      {
+        "id": "mapping_values_changed",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0
+      }
+    ],
+    "slot_perf_large": [
+      {
+        "id": "logical_values_changed",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0
+      },
+      {
+        "id": "mapping_values_changed",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0
+      },
+      {
+        "id": "large_path_int32_output_boundary",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0
+      }
+    ]
+  },
+  "storage_rebindings": {
+    "slot_perf_small": [
+      {
+        "id": "mapping_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      },
+      {
+        "id": "logical_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      }
+    ],
+    "slot_perf_large": [
+      {
+        "id": "mapping_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      },
+      {
+        "id": "logical_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      }
+    ]
+  },
+  "supplemental": [
+    {
+      "id": "large_nonpower_3_near_i32",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "19747a0793a7b43e79d13f7f749a3bf5e57e077c239694dab283fd3b1fbe92d6",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        32,
+        65536
+      ],
+      "input_shapes": [
+        [
+          65536
+        ],
+        [
+          32,
+          4096
+        ]
+      ],
+      "attributes": {
+        "block_size": 3
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "large_nonpower_7_near_i32",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "7f29d6834900c041cb0ac5d2d04ead9365bd81c3e10a70db5ed8deb982672066",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        32,
+        65536
+      ],
+      "input_shapes": [
+        [
+          65536
+        ],
+        [
+          32,
+          4096
+        ]
+      ],
+      "attributes": {
+        "block_size": 7
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "large_nonpower_31_near_i32",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "dc27e4c3c9596df79a6bede79103075b515c5f8d3ee516a198b38261a2cf1fe2",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        32,
+        65536
+      ],
+      "input_shapes": [
+        [
+          65536
+        ],
+        [
+          32,
+          4096
+        ]
+      ],
+      "attributes": {
+        "block_size": 31
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "small_logical_i32_power2",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "ae135ca956406fe3d939f779c9e2936d8384ff6238daa796e06103a1978f2ca0",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        7
+      ],
+      "input_shapes": [
+        [
+          7
+        ],
+        [
+          3
+        ]
+      ],
+      "attributes": {
+        "block_size": 1073741824
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "large_logical_i32_power2",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "65756af175e85ddffac78662544723007db108749754f4dd988193547395ff1a",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        32,
+        1024
+      ],
+      "input_shapes": [
+        [
+          1024
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "attributes": {
+        "block_size": 1073741824
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "large_logical_i32_nonpower",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "adfde451b2edc4749ad8a9399fa426c40e5aafd9df8a5e6af7e8489d29006c56",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        32,
+        1024
+      ],
+      "input_shapes": [
+        [
+          1024
+        ],
+        [
+          32,
+          3
+        ]
+      ],
+      "attributes": {
+        "block_size": 1073741823
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "small_logical_i32_nonpower",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "3a6986949d0eacfa29ec98c77d2babe962dc82f2d6f1e84e586a7fa974458dc1",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        7
+      ],
+      "input_shapes": [
+        [
+          7
+        ],
+        [
+          3
+        ]
+      ],
+      "attributes": {
+        "block_size": 1073741823
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    }
+  ],
+  "direct_run": {
+    "shape": true,
+    "dtype": true,
+    "npu": true,
+    "contiguous": true,
+    "independent_storage": true,
+    "candidate_mismatches": 0
+  },
+  "audit": {
+    "status": "PASS",
+    "tested_commit": "acd989c28bc8ea2c2ba481e280b494baace85413",
+    "source_hashes_match": true,
+    "positive": 14,
+    "negative": 10,
+    "dynamic": 5,
+    "storage_rebindings": 4,
+    "supplemental_boundaries": 7,
+    "direct_run": 1,
+    "accuracy_records": 41,
+    "performance_main": 2,
+    "performance_diagnostic": 2,
+    "paired_rounds": 24,
+    "memory_candidate_baseline_measurements": 4,
+    "execution_exit_code": 0
+  }
+}

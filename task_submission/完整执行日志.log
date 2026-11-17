@@ -1,0 +1,4 @@
+[W1117 05:03:43.332919530 NPUCachingAllocator.cpp:198] Warning: The current CANN and Soc Version require processing for 32 padding size, with memory allocation. (function operator())
+/workspace/token-slot-20261117/environment/tmp/task-reference-cj3mxvrb/baseline.py:22: UserWarning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (Triggered internally at ../torch_npu/csrc/aten/common/TensorFactories.cpp:423.)
+  result=m.index_select(1,logical)*b+(safe%b).reshape(1,-1)
+{"status": "PASS", "output": "/workspace/token-slot-20261117/reports/final-acd989c"}

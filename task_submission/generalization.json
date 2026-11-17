@@ -1,0 +1,342 @@
+{
+  "cases": [
+    {
+      "id": "slot_route_below",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "96bc20c8f9513b7b3d921f488b197215fa0be0f7026b847c21b5db215d0a5dc9",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        4095
+      ],
+      "input_shapes": [
+        [
+          4095
+        ],
+        [
+          8,
+          509
+        ]
+      ],
+      "attributes": {
+        "block_size": 64
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_route_at_pow2",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "6e7fd2fab27d7ebf3d2f798ca80fe6aed08bd448b06bfa54daf9850b09ad766f",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        4096
+      ],
+      "input_shapes": [
+        [
+          4096
+        ],
+        [
+          8,
+          509
+        ]
+      ],
+      "attributes": {
+        "block_size": 64
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_route_at_nonpower",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "e09aaa9b08ab7f43384c79bc160378eb97d88abd2133b18b249e535b788838ea",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8,
+        4096
+      ],
+      "input_shapes": [
+        [
+          4096
+        ],
+        [
+          8,
+          509
+        ]
+      ],
+      "attributes": {
+        "block_size": 96
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slot_wide_page_divmod",
+      "status": "PASS",
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "baseline_mismatches": 0,
+        "inputs_unchanged": true
+      },
+      "golden_sha256": "411ad70755dc1407921df2690acc5b6788e4c6fd33ac2a0b8420ebdd3a3759a3",
+      "candidate_mismatches": 0,
+      "baseline_mismatches": 0,
+      "shape": [
+        8
+      ],
+      "input_shapes": [
+        [
+          8
+        ],
+        [
+          3
+        ]
+      ],
+      "attributes": {
+        "block_size": 1073741823
+      },
+      "storage_offsets": [
+        0,
+        0
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "slot_route_at_pow2",
+      "status": "MEASURED",
+      "baseline_rounds_us": [
+        186.9563,
+        194.3271,
+        187.21779999999998,
+        185.3789,
+        192.44535000000002,
+        189.1728
+      ],
+      "candidate_rounds_us": [
+        82.90725,
+        82.01755,
+        82.83505000000001,
+        81.35905,
+        83.6519,
+        81.89115
+      ],
+      "round_order": [
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ]
+      ],
+      "elapsed_ns": [
+        {
+          "baseline": 37391260,
+          "candidate": 16581450
+        },
+        {
+          "candidate": 16403510,
+          "baseline": 38865420
+        },
+        {
+          "baseline": 37443560,
+          "candidate": 16567010
+        },
+        {
+          "candidate": 16271810,
+          "baseline": 37075780
+        },
+        {
+          "baseline": 38489070,
+          "candidate": 16730380
+        },
+        {
+          "candidate": 16378230,
+          "baseline": 37834560
+        }
+      ],
+      "baseline_mean_us": 189.24970833333333,
+      "candidate_mean_us": 82.44365833333333,
+      "saved_mean_us": 106.80605,
+      "saved_median_us": 105.76899999999998,
+      "saved_mean_ci95_us": [
+        104.63369999999999,
+        109.50393333333334
+      ],
+      "max_mean_us": null,
+      "bootstrap": {
+        "resamples": 10000,
+        "seed": 20261031,
+        "rng": "Python random.Random",
+        "percentile": "linear"
+      },
+      "checks": {
+        "mean_improves": true,
+        "median_improves": true,
+        "ci_lower_positive": true
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "measurement_protocol": "complete prepared.run, wall time, final device synchronization"
+    },
+    {
+      "id": "slot_route_at_nonpower",
+      "status": "MEASURED",
+      "baseline_rounds_us": [
+        187.34015,
+        184.57770000000002,
+        186.37475,
+        186.10875,
+        187.94604999999999,
+        185.97385
+      ],
+      "candidate_rounds_us": [
+        171.48035000000002,
+        171.29504999999997,
+        171.4496,
+        171.2661,
+        171.4658,
+        171.25195000000002
+      ],
+      "round_order": [
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ]
+      ],
+      "elapsed_ns": [
+        {
+          "baseline": 37468030,
+          "candidate": 34296070
+        },
+        {
+          "candidate": 34259010,
+          "baseline": 36915540
+        },
+        {
+          "baseline": 37274950,
+          "candidate": 34289920
+        },
+        {
+          "candidate": 34253220,
+          "baseline": 37221750
+        },
+        {
+          "baseline": 37589210,
+          "candidate": 34293160
+        },
+        {
+          "candidate": 34250390,
+          "baseline": 37194770
+        }
+      ],
+      "baseline_mean_us": 186.386875,
+      "candidate_mean_us": 171.36814166666667,
+      "saved_mean_us": 15.01873333333333,
+      "saved_median_us": 14.869425000000007,
+      "saved_mean_ci95_us": [
+        14.232015625000018,
+        15.807433333333316
+      ],
+      "max_mean_us": null,
+      "bootstrap": {
+        "resamples": 10000,
+        "seed": 20261031,
+        "rng": "Python random.Random",
+        "percentile": "linear"
+      },
+      "checks": {
+        "mean_improves": true,
+        "median_improves": true,
+        "ci_lower_positive": true
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "measurement_protocol": "complete prepared.run, wall time, final device synchronization"
+    }
+  ]
+}

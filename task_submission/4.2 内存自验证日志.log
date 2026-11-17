@@ -1,0 +1,110 @@
+{
+  "tested_commit": "acd989c28bc8ea2c2ba481e280b494baace85413",
+  "environment": {
+    "python": "3.10.12",
+    "platform": "Linux-5.10.0-216.0.0.115.oe2203sp4.aarch64-aarch64-with-glibc2.35",
+    "torch": "2.7.1+cpu",
+    "torch_npu": "2.7.1.post8",
+    "triton": "3.2.0",
+    "triton_ascend_distribution": "3.2.2",
+    "device": "Ascend910_9382"
+  },
+  "engineering_by_case": {
+    "slot_perf_small": {
+      "active_before_bytes": 134144,
+      "active_after_bytes": 134144,
+      "peak_increment_bytes": 16896,
+      "output_bytes": 16384,
+      "repeat20_released": "PASS",
+      "two_streams": "PASS",
+      "retained_outputs_independent": "PASS",
+      "baseline_two_streams": "PASS",
+      "baseline_retained_outputs_independent": "PASS",
+      "baseline_peak_increment_bytes": 102400,
+      "baseline_output_bytes": 16384,
+      "baseline_active_before_bytes": 134144,
+      "baseline_active_after_bytes": 134144,
+      "candidate_minus_baseline_peak_bytes": -85504,
+      "peak_definition": "Warmed active PyTorch allocation increment for one complete call"
+    },
+    "slot_perf_large": {
+      "active_before_bytes": 787456,
+      "active_after_bytes": 787456,
+      "peak_increment_bytes": 8389120,
+      "output_bytes": 8388608,
+      "repeat20_released": "PASS",
+      "two_streams": "PASS",
+      "retained_outputs_independent": "PASS",
+      "baseline_two_streams": "PASS",
+      "baseline_retained_outputs_independent": "PASS",
+      "baseline_peak_increment_bytes": 44044288,
+      "baseline_output_bytes": 8388608,
+      "baseline_active_before_bytes": 787456,
+      "baseline_active_after_bytes": 787456,
+      "candidate_minus_baseline_peak_bytes": -35655168,
+      "peak_definition": "Warmed active PyTorch allocation increment for one complete call"
+    }
+  },
+  "storage_rebindings": {
+    "slot_perf_small": [
+      {
+        "id": "mapping_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      },
+      {
+        "id": "logical_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      }
+    ],
+    "slot_perf_large": [
+      {
+        "id": "mapping_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      },
+      {
+        "id": "logical_set_storage",
+        "status": "PASS",
+        "shape": true,
+        "dtype": true,
+        "npu": true,
+        "contiguous": true,
+        "independent_storage": true,
+        "candidate_mismatches": 0,
+        "storage_offset": 1,
+        "pointer_changed": true,
+        "old_alignment_mod16": 0,
+        "new_alignment_mod16": 4
+      }
+    ]
+  }
+}

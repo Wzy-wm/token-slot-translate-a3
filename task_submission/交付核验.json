@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "tested_commit": "acd989c28bc8ea2c2ba481e280b494baace85413",
+  "source_hashes_match": true,
+  "positive": 14,
+  "negative": 10,
+  "dynamic": 5,
+  "storage_rebindings": 4,
+  "supplemental_boundaries": 7,
+  "direct_run": 1,
+  "accuracy_records": 41,
+  "performance_main": 2,
+  "performance_diagnostic": 2,
+  "paired_rounds": 24,
+  "memory_candidate_baseline_measurements": 4,
+  "execution_exit_code": 0
+}

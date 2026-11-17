@@ -1,0 +1,396 @@
+{
+  "tested_commit": "acd989c28bc8ea2c2ba481e280b494baace85413",
+  "environment": {
+    "python": "3.10.12",
+    "platform": "Linux-5.10.0-216.0.0.115.oe2203sp4.aarch64-aarch64-with-glibc2.35",
+    "torch": "2.7.1+cpu",
+    "torch_npu": "2.7.1.post8",
+    "triton": "3.2.0",
+    "triton_ascend_distribution": "3.2.2",
+    "device": "Ascend910_9382"
+  },
+  "benchmarks": [
+    {
+      "id": "slot_perf_small",
+      "status": "PASS",
+      "baseline_rounds_us": [
+        202.01885000000001,
+        186.3461,
+        181.707,
+        184.2364,
+        186.8101,
+        184.38695
+      ],
+      "candidate_rounds_us": [
+        86.13945,
+        83.5441,
+        83.97619999999999,
+        82.75695,
+        84.33265,
+        81.05995
+      ],
+      "round_order": [
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ]
+      ],
+      "elapsed_ns": [
+        {
+          "baseline": 40403770,
+          "candidate": 17227890
+        },
+        {
+          "candidate": 16708820,
+          "baseline": 37269220
+        },
+        {
+          "baseline": 36341400,
+          "candidate": 16795240
+        },
+        {
+          "candidate": 16551390,
+          "baseline": 36847280
+        },
+        {
+          "baseline": 37362020,
+          "candidate": 16866530
+        },
+        {
+          "candidate": 16211990,
+          "baseline": 36877390
+        }
+      ],
+      "baseline_mean_us": 187.58423333333334,
+      "candidate_mean_us": 83.63488333333333,
+      "saved_mean_us": 103.94935000000001,
+      "saved_median_us": 101.60637500000003,
+      "saved_mean_ci95_us": [
+        100.24571666666667,
+        109.20777500000001
+      ],
+      "max_mean_us": 85,
+      "bootstrap": {
+        "resamples": 10000,
+        "seed": 20261031,
+        "rng": "Python random.Random",
+        "percentile": "linear"
+      },
+      "checks": {
+        "mean_improves": true,
+        "median_improves": true,
+        "ci_lower_positive": true,
+        "fixed_target": true
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "measurement_protocol": "complete prepared.run, wall time, final device synchronization"
+    },
+    {
+      "id": "slot_perf_large",
+      "status": "PASS",
+      "baseline_rounds_us": [
+        325.8817,
+        325.5777,
+        326.42855,
+        325.72040000000004,
+        326.1107,
+        326.07
+      ],
+      "candidate_rounds_us": [
+        84.486,
+        83.59214999999999,
+        83.93785000000001,
+        82.98780000000001,
+        84.63810000000001,
+        83.4638
+      ],
+      "round_order": [
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ]
+      ],
+      "elapsed_ns": [
+        {
+          "baseline": 65176340,
+          "candidate": 16897200
+        },
+        {
+          "candidate": 16718430,
+          "baseline": 65115540
+        },
+        {
+          "baseline": 65285710,
+          "candidate": 16787570
+        },
+        {
+          "candidate": 16597560,
+          "baseline": 65144080
+        },
+        {
+          "baseline": 65222140,
+          "candidate": 16927620
+        },
+        {
+          "candidate": 16692760,
+          "baseline": 65214000
+        }
+      ],
+      "baseline_mean_us": 325.96484166666664,
+      "candidate_mean_us": 83.85095000000001,
+      "saved_mean_us": 242.11389166666666,
+      "saved_median_us": 242.21085000000005,
+      "saved_mean_ci95_us": [
+        241.68932499999997,
+        242.52745833333336
+      ],
+      "max_mean_us": 155,
+      "bootstrap": {
+        "resamples": 10000,
+        "seed": 20261031,
+        "rng": "Python random.Random",
+        "percentile": "linear"
+      },
+      "checks": {
+        "mean_improves": true,
+        "median_improves": true,
+        "ci_lower_positive": true,
+        "fixed_target": true
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "measurement_protocol": "complete prepared.run, wall time, final device synchronization"
+    },
+    {
+      "id": "slot_route_at_pow2",
+      "status": "MEASURED",
+      "baseline_rounds_us": [
+        186.9563,
+        194.3271,
+        187.21779999999998,
+        185.3789,
+        192.44535000000002,
+        189.1728
+      ],
+      "candidate_rounds_us": [
+        82.90725,
+        82.01755,
+        82.83505000000001,
+        81.35905,
+        83.6519,
+        81.89115
+      ],
+      "round_order": [
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ]
+      ],
+      "elapsed_ns": [
+        {
+          "baseline": 37391260,
+          "candidate": 16581450
+        },
+        {
+          "candidate": 16403510,
+          "baseline": 38865420
+        },
+        {
+          "baseline": 37443560,
+          "candidate": 16567010
+        },
+        {
+          "candidate": 16271810,
+          "baseline": 37075780
+        },
+        {
+          "baseline": 38489070,
+          "candidate": 16730380
+        },
+        {
+          "candidate": 16378230,
+          "baseline": 37834560
+        }
+      ],
+      "baseline_mean_us": 189.24970833333333,
+      "candidate_mean_us": 82.44365833333333,
+      "saved_mean_us": 106.80605,
+      "saved_median_us": 105.76899999999998,
+      "saved_mean_ci95_us": [
+        104.63369999999999,
+        109.50393333333334
+      ],
+      "max_mean_us": null,
+      "bootstrap": {
+        "resamples": 10000,
+        "seed": 20261031,
+        "rng": "Python random.Random",
+        "percentile": "linear"
+      },
+      "checks": {
+        "mean_improves": true,
+        "median_improves": true,
+        "ci_lower_positive": true
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "measurement_protocol": "complete prepared.run, wall time, final device synchronization"
+    },
+    {
+      "id": "slot_route_at_nonpower",
+      "status": "MEASURED",
+      "baseline_rounds_us": [
+        187.34015,
+        184.57770000000002,
+        186.37475,
+        186.10875,
+        187.94604999999999,
+        185.97385
+      ],
+      "candidate_rounds_us": [
+        171.48035000000002,
+        171.29504999999997,
+        171.4496,
+        171.2661,
+        171.4658,
+        171.25195000000002
+      ],
+      "round_order": [
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ],
+        [
+          "baseline",
+          "candidate"
+        ],
+        [
+          "candidate",
+          "baseline"
+        ]
+      ],
+      "elapsed_ns": [
+        {
+          "baseline": 37468030,
+          "candidate": 34296070
+        },
+        {
+          "candidate": 34259010,
+          "baseline": 36915540
+        },
+        {
+          "baseline": 37274950,
+          "candidate": 34289920
+        },
+        {
+          "candidate": 34253220,
+          "baseline": 37221750
+        },
+        {
+          "baseline": 37589210,
+          "candidate": 34293160
+        },
+        {
+          "candidate": 34250390,
+          "baseline": 37194770
+        }
+      ],
+      "baseline_mean_us": 186.386875,
+      "candidate_mean_us": 171.36814166666667,
+      "saved_mean_us": 15.01873333333333,
+      "saved_median_us": 14.869425000000007,
+      "saved_mean_ci95_us": [
+        14.232015625000018,
+        15.807433333333316
+      ],
+      "max_mean_us": null,
+      "bootstrap": {
+        "resamples": 10000,
+        "seed": 20261031,
+        "rng": "Python random.Random",
+        "percentile": "linear"
+      },
+      "checks": {
+        "mean_improves": true,
+        "median_improves": true,
+        "ci_lower_positive": true
+      },
+      "warmup": 50,
+      "iterations": 200,
+      "measurement_protocol": "complete prepared.run, wall time, final device synchronization"
+    }
+  ]
+}

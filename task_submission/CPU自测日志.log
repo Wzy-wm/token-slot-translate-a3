@@ -1,0 +1,18 @@
+test_attributes_rejected_before_device_use (test_local.ApiBoundaryTests.test_attributes_rejected_before_device_use) ... ok
+test_bad_input_count_and_type (test_local.ApiBoundaryTests.test_bad_input_count_and_type) ... ok
+test_cpu_input_rejected (test_local.ApiBoundaryTests.test_cpu_input_rejected) ... ok
+test_syntax_of_all_component_files (test_local.ApiBoundaryTests.test_syntax_of_all_component_files) ... ok
+test_all_fourteen_fixture_oracles (test_local.IntegerModelTests.test_all_fourteen_fixture_oracles) ... ok
+test_exhaustive_small_range (test_local.IntegerModelTests.test_exhaustive_small_range) ... ok
+test_random_i32_and_wide_divisors (test_local.IntegerModelTests.test_random_i32_and_wide_divisors) ... ok
+test_reference_source_integrity (test_local.IntegerModelTests.test_reference_source_integrity) ... ok
+test_constant_paired_saving (test_local.StatisticsTests.test_constant_paired_saving) ... ok
+test_fixed_target_failure (test_local.StatisticsTests.test_fixed_target_failure) ... ok
+test_invalid_samples_rejected (test_local.StatisticsTests.test_invalid_samples_rejected) ... ok
+test_joint_sampling_captures_correlated_rounds (test_local.StatisticsTests.test_joint_sampling_captures_correlated_rounds) ... ok
+test_nonpositive_interval_fails (test_local.StatisticsTests.test_nonpositive_interval_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.398s
+
+OK
