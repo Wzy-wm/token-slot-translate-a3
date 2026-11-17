@@ -1,0 +1,4 @@
+# CANN 9.1.0 / Python 3.10 tested pairing (Linux aarch64).
+torch==2.7.1
+torch_npu==2.7.1.post8
+triton-ascend==3.2.2

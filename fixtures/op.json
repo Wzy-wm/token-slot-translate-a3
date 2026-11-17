@@ -1,0 +1,78 @@
+[
+  {
+    "op": "TokenSlotTranslate",
+    "language": "python",
+    "interface": "连续NPU int32 `slots[N]` 与M[B]或M[L,B]；attributes={block_size:S}，S为1至2147483647的整数。输出[N]或[L,N]：负输入输出−1；非负输入输出 `M[layer,slot//S]×S + slot mod S`。prepare检查逻辑范围，并要求每个M值满足 `M×S+S−1≤2147483647`。入口为prepare/run，prepared对象每次产生独立输出。",
+    "parameters": [
+      {
+        "name": "prepare([slots,M],{block_size:S})",
+        "description": "slots为int32[N]，M为int32[B]或[L,B]；检查逻辑地址和输出int32范围"
+      },
+      {
+        "name": "block_size",
+        "description": "正整数S≤2147483647；prepare后固定；变化需重新prepare"
+      },
+      {
+        "name": "prepared.run()",
+        "description": "当前NPU stream；输出独立int32[N]或[L,N]，保留页内偏移"
+      },
+      {
+        "name": "run(inputs,attributes)",
+        "description": "同上；包含prepare；正式热路径比较使用prepared.run"
+      }
+    ],
+    "golden": "`values, attrs = generate_data.generate(case)`；`golden.calculate(values, attrs, single)` 返回 CPU 列表标杆。`single` 根据 M 的维数确定。NPU 输入均为 int32，整数中间计算保持精确。",
+    "constraints": "原主性能判据覆盖 S=128 的两个输入。新增 S=64 和 S=96 同规模对照分别记录幂二及非幂二路径耗时，按各自实测结果报告。prepare有一次CPU值域回读；未经重新校验的越界更新不属于合法调用。",
+    "input_desc": [
+      {
+        "name": "slots",
+        "param_type": "required",
+        "shape": [
+          "N"
+        ],
+        "type": [
+          "int32"
+        ],
+        "format": [
+          "ND"
+        ]
+      },
+      {
+        "name": "M",
+        "param_type": "required",
+        "shape": [
+          "B or L,B"
+        ],
+        "type": [
+          "int32"
+        ],
+        "format": [
+          "ND"
+        ]
+      }
+    ],
+    "output_desc": [
+      {
+        "name": "output",
+        "param_type": "required",
+        "shape": [
+          "N or L,N"
+        ],
+        "type": [
+          "int32"
+        ],
+        "format": [
+          "ND"
+        ]
+      }
+    ],
+    "attr": [
+      {
+        "name": "block_size",
+        "type": "int",
+        "min": 1,
+        "max": 2147483647
+      }
+    ]
+  }
+]
